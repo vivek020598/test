@@ -1,0 +1,259 @@
+/*1. Write a program to perform simple CRUD operation using String array
+     Array name should be places.*/
+
+     class SuperMarket{
+	         static String name = "More";
+		 static String owner = "Puneeth";
+		 static String address = "Tumkur";
+		 static String items[] = {null,null,null};
+		 static int index;
+	
+	public static boolean addItems(String item){
+	System.out.println("inside addItems():");
+	boolean isAdded = false;
+	if(items != null){
+		items[index] = item;
+		index++;
+		isAdded = true;
+	System.out.println("item added successfully");
+	}
+	else{
+		System.out.println("items can't be null");
+	   }
+	System.out.println("end of items");
+	return isAdded;
+	}
+	//read operation
+	public static void getItems(){
+	for(int index = 0; index < items.length; index++){
+		System.out.println(items[index]);
+		
+	}
+}
+	//update operation
+	public static boolean updateItems(String newItem, String oldItem){
+		
+	boolean isUpdated = false;
+
+	for(int index=0;index<foodItems.length;index++){
+		if(items[index] == oldItem){
+			items[index] = newItem;
+			isUpdated = true;
+		}
+	}
+	System.out.println("after updating the value");
+	return isUpdated;
+	}
+	//delete operation
+	public static void deleteItems(String foodItem){
+	int newIndex, oldIndex;
+	
+	for( newIndex=0, oldIndex=0;oldIndex<items.length; oldIndex++){
+		if(items[oldIndex] != item){
+			items[newIndex++] = items[oldIndex];
+			
+		}		
+	}
+	items = Arrays.copyOf(items, newIndex);
+	return;	
+	}
+}
+
+//tester code
+class SuperMarketTester{
+public static void main(String items[]){
+	
+	Hotel.addItems("chocolate");
+	Hotel.addItems("biscuit");
+	Hotel.addItems("juice");
+	
+	Hotel.getItems();
+	
+	Hotel.updateItems("oil","juice");
+	Hotel.getFoodItems();
+	
+	Hotel.deleteItems("biscuit");
+	Hotel.getFoodItems();
+}
+}
+     
+  /*2. List the 10 keywords and explain each.
+  
+  1. int: int is keyword which has default value 0.
+  2. float : float is keyword which has default value 0.0
+  3. char : char is keyword which has default value space.
+  4. byte : byte is keyword which has default value 0.
+  5. double : double is keyword which has default value0 0
+  6. short : short is keyword which has default value 0
+  7. long :long is keyword which has default value 0
+  8. boolean : boolean is keyword which has default value false
+  9. class : class is a reference to an object.
+  10. void : void is a return type which is used for not returning any values
+  */
+  
+  /*3. You are given a large integer represented as an integer array of digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+Increment the large integer by one and return the resulting array of digits.*/
+
+
+
+
+/*4. What is variable? Explain its type with example.
+Variable is a registered area in a memory or it is a container which is used to store values/data.
+Types are : Static variable : These are the variables which are declared outside main method with the help of keyword called static.*/
+	   class Factorial{
+           public static void main(String factorial[]){
+	   int factNumber = 8;
+	   int fact =1;
+	   for(int f=1;f<=factNumber;f++){
+	   fact= fact*f;
+	   }
+       	System.out.println("factorial of 8 is" + fact);
+	    }
+	  }
+
+
+	   /*Local variable : These are the variables which are declared inside main method.
+	    Instance variable : These are the variables which are declared outside main method without static keyword.
+	    Parameter variable : These are the variables which are declared inside paranthesis in method.*/
+
+	    //
+	    class Zomato{
+		public static double price(String foodItems,int quantity){
+	 
+	 	 if (foodItems == "north meals"){
+	  return 190.00;
+	 }
+	 	 if (foodItems == "south meals"){
+	  return 90.00;
+	 }
+	 	 if (foodItems == "starters"){
+	  return 225.00;
+	 }
+
+	 else{
+		 System.out.println("item not found");
+	 }
+	 return 0.0;
+	 }
+	 }
+	 
+	 //tester code
+	 
+class ZomatoTester{
+     public static void main(String menu[]){
+	 
+	 double price = Zomato.price("starters",2);
+	 System.out.println("food item is :" + price);
+	 }
+
+}
+	 
+	 
+//5. List the difference between primitive and non-primitive datatypes
+Primitive datatype: These are the datatypes which starts with the lowercase.
+			Ex: byte, short, int, long.
+			Default values are : 0,0.0, false etc.
+Non premitive datatype: These are the datatypes which starts with uppercase.
+			Ex: ClassName, String, System, Reference, Interface.
+			Default values : null
+			
+			
+//6. Explain:
+		Identifier :Any name which is used in source code is called identifier.
+		Keyword :keywords are pre-defined / built-in words which has some meaning.
+		Literals : values in source code is considered as literals.
+		Array : It is container which is used to store multiple values of same type.
+		methods : method is functionality or behaviour of a class.
+		
+//7. What is method overloading? Explain with program.
+	Two or more methods with same method name but differ in their parameter list is known as method overloading.  
+	Example: 
+	class Calculator{
+public static void main(String calculate[]){ 
+ int total1 = add(12,22);
+ int total2 = add(12,22,32);
+System.out.println(total1);
+System.out.println(total2);
+
+}
+public static int add(int num1, int num2){
+int total=num1+num2;
+return total;
+}
+public static int add(int num1, int num2, int num3){
+int total=num1+num2+num3;
+return total;
+}
+}
+//8.How do you write an infinite loop using the for statement?
+for(int index = 0; ;index++){
+	
+}
+
+
+
+
+//10. Explain the main method?
+//public static void main(String args[])]
+
+
+  public static       void          main                     parameters
+<access modifiers> return type <method name> (parameter1, parameter2, parameter3, …………………., parametern) {
+	//body of method or block of method
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
